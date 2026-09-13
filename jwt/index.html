@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Decode and inspect JWT header, payload and claims locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>JWT decoder — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="jwt-input-heading">
+        <h2 id="jwt-input-heading">Token</h2>
+        <label class="input-label" for="jwt-input">JWT</label>
+        <textarea
+          id="jwt-input"
+          rows="5"
+          class="mono"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="Paste a JWT to decode it locally"
+        ></textarea>
+        <p class="note" id="jwt-verify-note"></p>
+        <p id="jwt-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" id="jwt-results" aria-labelledby="jwt-results-heading" hidden>
+        <h2 id="jwt-results-heading">Decoded</h2>
+        <p id="jwt-status" class="status" aria-live="polite"></p>
+
+        <h2>Claims</h2>
+        <div id="jwt-claims" class="kv-table" hidden></div>
+
+        <h2>Header</h2>
+        <div class="copy-row">
+          <pre id="jwt-header-json"></pre>
+          <button type="button" id="jwt-header-copy">Copy</button>
+        </div>
+
+        <h2>Payload</h2>
+        <div class="copy-row">
+          <pre id="jwt-payload-json"></pre>
+          <button type="button" id="jwt-payload-copy">Copy</button>
+        </div>
+
+        <h2>Timestamps</h2>
+        <div id="jwt-timestamps" class="kv-table"></div>
+
+        <p id="jwt-note" class="note"></p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/jwt/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Local-first developer utilities — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Tools — local-first developer utilities</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1 class="brand-line"><a class="brand" href="/">Tools</a></h1>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="utilities-heading">
+        <h2 id="utilities-heading">Utilities</h2>
+        <p class="note">
+          Twelve small utilities for everyday development. Everything runs client-side — your input
+          never leaves this page.
+        </p>
+        <div id="tools-grid" class="tools-grid"></div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/home/main.ts"></script>
+  </body>
+</html>

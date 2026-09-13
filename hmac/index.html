@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Sign text with HMAC using a shared secret key — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>HMAC signer — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="hmac-input-heading">
+        <h2 id="hmac-input-heading">Message and secret</h2>
+        <label class="input-label" for="hmac-message">Message</label>
+        <textarea id="hmac-message" rows="5" class="mono" spellcheck="false"></textarea>
+        <label class="input-label" for="hmac-secret">Secret</label>
+        <input
+          id="hmac-secret"
+          type="password"
+          class="mono"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <fieldset class="segmented">
+          <legend>Algorithm</legend>
+          <label>
+            <input
+              type="radio"
+              id="hmac-alg-sha256"
+              name="hmac-algorithm"
+              value="SHA-256"
+              checked
+            />
+            <span>SHA-256</span>
+          </label>
+          <label>
+            <input type="radio" id="hmac-alg-sha384" name="hmac-algorithm" value="SHA-384" />
+            <span>SHA-384</span>
+          </label>
+          <label>
+            <input type="radio" id="hmac-alg-sha512" name="hmac-algorithm" value="SHA-512" />
+            <span>SHA-512</span>
+          </label>
+        </fieldset>
+        <fieldset class="segmented">
+          <legend>Encoding</legend>
+          <label>
+            <input type="radio" id="hmac-enc-hex" name="hmac-encoding" value="hex" checked />
+            <span>Hex</span>
+          </label>
+          <label>
+            <input type="radio" id="hmac-enc-base64" name="hmac-encoding" value="base64" />
+            <span>Base64</span>
+          </label>
+          <label>
+            <input type="radio" id="hmac-enc-base64url" name="hmac-encoding" value="base64url" />
+            <span>Base64URL</span>
+          </label>
+        </fieldset>
+        <p id="hmac-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="hmac-output-heading">
+        <h2 id="hmac-output-heading">Signature</h2>
+        <p id="hmac-status" class="status" aria-live="polite"></p>
+        <div class="copy-row">
+          <pre id="hmac-output"></pre>
+          <button type="button" id="hmac-copy">Copy</button>
+        </div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/hmac/main.ts"></script>
+  </body>
+</html>

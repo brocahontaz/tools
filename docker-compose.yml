@@ -1,0 +1,7 @@
+services:
+  tools:
+    build: .
+    image: tools-utilities:local
+    ports:
+      - '8080:8080'
+    restart: unless-stopped
