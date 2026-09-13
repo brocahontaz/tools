@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Generate random UUID version 4 identifiers locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>UUID v4 generator — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="uuid-options-heading">
+        <h2 id="uuid-options-heading">Options</h2>
+        <label class="input-label" for="uuid-count">Count (1–100)</label>
+        <input
+          id="uuid-count"
+          type="number"
+          min="1"
+          max="100"
+          step="1"
+          value="5"
+          inputmode="numeric"
+        />
+        <label class="check">
+          <input type="checkbox" id="uuid-uppercase" />
+          Uppercase
+        </label>
+        <div class="actions">
+          <button type="button" id="uuid-generate">Generate</button>
+        </div>
+        <p id="uuid-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="uuid-output-heading">
+        <h2 id="uuid-output-heading">Output</h2>
+        <p id="uuid-status" class="status" aria-live="polite"></p>
+        <label class="input-label" for="uuid-output">Generated UUIDs</label>
+        <textarea id="uuid-output" rows="8" class="mono" readonly spellcheck="false"></textarea>
+        <div class="actions">
+          <button type="button" id="uuid-copy">Copy</button>
+        </div>
+        <p id="uuid-stats" class="note"></p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/uuid/main.ts"></script>
+  </body>
+</html>

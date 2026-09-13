@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Convert between JSON and YAML locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>JSON ↔ YAML — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="yaml-input-heading">
+        <h2 id="yaml-input-heading">Input</h2>
+        <label class="input-label" for="yaml-input">JSON or YAML</label>
+        <textarea
+          id="yaml-input"
+          rows="10"
+          class="mono"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="name: tools"
+        ></textarea>
+        <fieldset class="segmented">
+          <legend>Direction</legend>
+          <label>
+            <input
+              type="radio"
+              id="yaml-dir-json-to-yaml"
+              name="yaml-direction"
+              value="json-to-yaml"
+              checked
+            />
+            <span>JSON → YAML</span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="yaml-dir-yaml-to-json"
+              name="yaml-direction"
+              value="yaml-to-json"
+            />
+            <span>YAML → JSON</span>
+          </label>
+        </fieldset>
+        <p id="yaml-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="yaml-output-heading">
+        <h2 id="yaml-output-heading">Output</h2>
+        <p id="yaml-status" class="status" aria-live="polite"></p>
+        <div class="copy-row">
+          <pre id="yaml-output"></pre>
+          <button type="button" id="yaml-copy">Copy</button>
+        </div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/yaml/main.ts"></script>
+  </body>
+</html>

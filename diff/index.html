@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Compare two texts and highlight the differences locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Text diff — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="diff-input-heading">
+        <h2 id="diff-input-heading">Input</h2>
+        <div class="diff-inputs">
+          <div>
+            <label class="input-label" for="diff-left">Original</label>
+            <textarea
+              id="diff-left"
+              rows="8"
+              class="mono"
+              spellcheck="false"
+              autocomplete="off"
+            ></textarea>
+          </div>
+          <div>
+            <label class="input-label" for="diff-right">Modified</label>
+            <textarea
+              id="diff-right"
+              rows="8"
+              class="mono"
+              spellcheck="false"
+              autocomplete="off"
+            ></textarea>
+          </div>
+        </div>
+        <fieldset class="segmented" id="diff-view">
+          <legend>View</legend>
+          <label>
+            <input type="radio" id="diff-view-unified" name="diff-view" value="unified" checked />
+            <span>Unified</span>
+          </label>
+          <label>
+            <input type="radio" id="diff-view-split" name="diff-view" value="split" />
+            <span>Split</span>
+          </label>
+        </fieldset>
+        <p id="diff-limit" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="diff-output-heading">
+        <h2 id="diff-output-heading">Result</h2>
+        <p id="diff-status" class="status" aria-live="polite"></p>
+        <p id="diff-stats" class="note"></p>
+        <div class="copy-row">
+          <pre id="diff-output"></pre>
+          <button type="button" id="diff-copy">Copy</button>
+        </div>
+        <div id="diff-split" class="diff-split" hidden></div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/diff/main.ts"></script>
+  </body>
+</html>

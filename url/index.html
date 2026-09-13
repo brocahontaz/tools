@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Percent-encode and decode URLs and URI components locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>URL encode / decode — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="url-input-heading">
+        <h2 id="url-input-heading">Input</h2>
+        <label class="input-label" for="url-input">Text</label>
+        <textarea id="url-input" rows="4" class="mono" spellcheck="false"></textarea>
+        <fieldset class="segmented">
+          <legend>Mode</legend>
+          <label>
+            <input type="radio" id="url-mode-component" name="url-mode" value="component" checked />
+            <span>Component</span>
+          </label>
+          <label>
+            <input type="radio" id="url-mode-full" name="url-mode" value="full" />
+            <span>Full URL</span>
+          </label>
+        </fieldset>
+        <div class="actions">
+          <button type="button" id="url-encode">Encode</button>
+          <button type="button" id="url-decode">Decode</button>
+        </div>
+        <p id="url-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="url-output-heading">
+        <h2 id="url-output-heading">Output</h2>
+        <p id="url-status" class="status" aria-live="polite"></p>
+        <div class="copy-row">
+          <pre id="url-output"></pre>
+          <button type="button" id="url-copy">Copy</button>
+        </div>
+      </section>
+
+      <section class="card" id="url-parts-card" aria-labelledby="url-parts-heading">
+        <h2 id="url-parts-heading">URL parts</h2>
+        <div id="url-parts" class="kv-table"></div>
+        <p id="url-parts-note" class="note" hidden></p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/url/main.ts"></script>
+  </body>
+</html>

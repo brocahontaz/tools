@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Encode and decode Base64 and Base64URL text locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Base64 / Base64URL — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="base64-input-heading">
+        <h2 id="base64-input-heading">Input</h2>
+        <label class="input-label" for="base64-input">Text</label>
+        <textarea id="base64-input" rows="6" class="mono" spellcheck="false"></textarea>
+        <fieldset class="segmented">
+          <legend>Variant</legend>
+          <label>
+            <input
+              type="radio"
+              id="base64-variant-standard"
+              name="base64-variant"
+              value="standard"
+              checked
+            />
+            <span>Standard</span>
+          </label>
+          <label>
+            <input type="radio" id="base64-variant-url" name="base64-variant" value="url" />
+            <span>URL-safe</span>
+          </label>
+        </fieldset>
+        <div class="actions">
+          <button type="button" id="encode-btn">Encode</button>
+          <button type="button" id="decode-btn">Decode</button>
+          <button type="button" id="swap-btn">Move output to input</button>
+        </div>
+        <p id="base64-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="base64-output-heading">
+        <h2 id="base64-output-heading">Output</h2>
+        <p id="base64-status" class="status" aria-live="polite"></p>
+        <div class="copy-row">
+          <pre id="base64-output"></pre>
+          <button type="button" id="base64-copy">Copy</button>
+        </div>
+        <p id="base64-meta" class="note"></p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/base64/main.ts"></script>
+  </body>
+</html>

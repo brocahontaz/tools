@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="IPv4 CIDR and subnet helper — runs locally, nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>IPv4 CIDR — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="cidr-input-heading">
+        <h2 id="cidr-input-heading">Input</h2>
+        <label class="input-label" for="cidr-input">Address or CIDR</label>
+        <input id="cidr-input" type="text" autocomplete="off" spellcheck="false" />
+        <p class="note">IPv4 only — accepts a.b.c.d/p, a.b.c.d netmask or a bare address.</p>
+        <p id="cidr-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="cidr-results-heading">
+        <h2 id="cidr-results-heading">Results</h2>
+        <p id="cidr-status" class="status" aria-live="polite"></p>
+        <div id="cidr-results" class="kv-table" hidden></div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/cidr/main.ts"></script>
+  </body>
+</html>

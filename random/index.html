@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Generate secure random strings and passwords locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Random generator — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="rand-options-heading">
+        <h2 id="rand-options-heading">Options</h2>
+        <div class="fields-row">
+          <div>
+            <label class="input-label" for="rand-length">Length (1–512)</label>
+            <input
+              id="rand-length"
+              type="number"
+              min="1"
+              max="512"
+              step="1"
+              value="20"
+              inputmode="numeric"
+            />
+          </div>
+          <div>
+            <label class="input-label" for="rand-count">Count (1–50)</label>
+            <input
+              id="rand-count"
+              type="number"
+              min="1"
+              max="50"
+              step="1"
+              value="5"
+              inputmode="numeric"
+            />
+          </div>
+        </div>
+        <label class="check">
+          <input type="checkbox" id="rand-uppercase" checked />
+          Uppercase (A–Z)
+        </label>
+        <label class="check">
+          <input type="checkbox" id="rand-lowercase" checked />
+          Lowercase (a–z)
+        </label>
+        <label class="check">
+          <input type="checkbox" id="rand-digits" checked />
+          Digits (0–9)
+        </label>
+        <label class="check">
+          <input type="checkbox" id="rand-symbols" checked />
+          Symbols
+        </label>
+        <label class="check">
+          <input type="checkbox" id="rand-exclude-ambiguous" />
+          Exclude ambiguous characters (Il1O0o ~|)
+        </label>
+        <div class="actions">
+          <button type="button" id="rand-generate">Generate</button>
+        </div>
+        <p id="rand-error" class="error" role="alert" hidden></p>
+        <p id="rand-note" class="note">
+          Generated with crypto.getRandomValues — cryptographically secure and local only.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="rand-output-heading">
+        <h2 id="rand-output-heading">Output</h2>
+        <p id="rand-status" class="status" aria-live="polite"></p>
+        <label class="input-label" for="rand-output">Generated values</label>
+        <textarea id="rand-output" rows="8" class="mono" readonly spellcheck="false"></textarea>
+        <div class="actions">
+          <button type="button" id="rand-copy">Copy</button>
+        </div>
+        <p id="rand-entropy" class="note">
+          <span id="rand-entropy-value"></span> bits of entropy · pool:
+          <span id="rand-entropy-pool"></span>
+        </p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/random/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Format, validate and minify JSON locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>JSON formatter — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <section class="card" aria-labelledby="json-input-heading">
+        <h2 id="json-input-heading">Input</h2>
+        <label class="input-label" for="json-input">JSON</label>
+        <textarea
+          id="json-input"
+          rows="10"
+          class="mono"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder='{"paste": "json here"}'
+        ></textarea>
+        <fieldset class="segmented">
+          <legend>Indent</legend>
+          <label>
+            <input type="radio" id="json-indent-2" name="json-indent" value="2" checked />
+            <span>2 spaces</span>
+          </label>
+          <label>
+            <input type="radio" id="json-indent-4" name="json-indent" value="4" />
+            <span>4 spaces</span>
+          </label>
+          <label>
+            <input type="radio" id="json-indent-tab" name="json-indent" value="tab" />
+            <span>Tab</span>
+          </label>
+        </fieldset>
+        <label class="check">
+          <input type="checkbox" id="json-sort-keys" />
+          Sort keys
+        </label>
+        <div class="actions">
+          <button type="button" id="json-format">Format</button>
+          <button type="button" id="json-minify">Minify</button>
+        </div>
+        <p id="json-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="card" aria-labelledby="json-output-heading">
+        <h2 id="json-output-heading">Output</h2>
+        <p id="json-status" class="status" aria-live="polite"></p>
+        <div class="copy-row">
+          <pre id="json-output"></pre>
+          <button type="button" id="json-copy">Copy</button>
+        </div>
+        <p id="json-stats" class="note"></p>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/json/main.ts"></script>
+  </body>
+</html>

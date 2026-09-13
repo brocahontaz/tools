@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Convert Unix timestamps to and from dates locally — nothing leaves your browser."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Unix timestamp — Tools</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="brand-line"><a class="brand" href="/">Tools</a></p>
+        <p class="tagline">Local-first developer utilities — nothing leaves your browser.</p>
+      </div>
+      <span id="local-note" class="local-note">Local only</span>
+    </header>
+    <nav id="tools-nav" class="tools-nav" aria-label="Tools"></nav>
+    <noscript>
+      <p class="noscript">
+        These utilities run entirely in your browser and need JavaScript to work.
+      </p>
+    </noscript>
+    <main class="layout">
+      <div class="actions">
+        <button type="button" id="ts-now">Now</button>
+        <p id="ts-status" class="status" aria-live="polite"></p>
+      </div>
+      <div class="two-col">
+        <section class="card" aria-labelledby="ts-unix-heading">
+          <h2 id="ts-unix-heading">Unix timestamp → date</h2>
+          <label class="input-label" for="ts-unix">Timestamp (seconds or milliseconds)</label>
+          <input
+            id="ts-unix"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="1700000000"
+          />
+          <p id="ts-unit-note" class="note"></p>
+          <div id="ts-unix-results" class="kv-table" hidden></div>
+          <p id="ts-unix-error" class="error" role="alert" hidden></p>
+        </section>
+
+        <section class="card" aria-labelledby="ts-date-heading">
+          <h2 id="ts-date-heading">Date → Unix timestamp</h2>
+          <label class="input-label" for="ts-date">Date (ISO 8601)</label>
+          <input
+            id="ts-date"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="2026-01-31T12:00:00Z"
+          />
+          <div id="ts-date-results" class="kv-table" hidden></div>
+          <p id="ts-date-error" class="error" role="alert" hidden></p>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <p id="footer-note">All tools run locally in your browser.</p>
+    </footer>
+    <script type="module" src="/src/pages/timestamp/main.ts"></script>
+  </body>
+</html>
