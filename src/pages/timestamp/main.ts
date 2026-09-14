@@ -8,7 +8,7 @@ import {
   parseUnixTimestamp,
 } from '../../logic/timestamp.ts';
 
-initPageShell('timestamp');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 

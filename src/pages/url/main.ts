@@ -12,7 +12,7 @@ import { initPageShell } from '../../shared/shell.ts';
 import { LIMITS, guardInput } from '../../shared/limits.ts';
 import { decodeUrl, encodeUrl, urlParts, type UrlMode, type UrlParts } from '../../logic/url.ts';
 
-initPageShell('url');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 

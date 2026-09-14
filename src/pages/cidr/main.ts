@@ -5,7 +5,7 @@ import { initPageShell } from '../../shared/shell.ts';
 import { kvRow } from '../../shared/kv.ts';
 import { analyzeIpv4, CIDR_INPUT_PLACEHOLDER, type Ipv4Analysis } from '../../logic/cidr.ts';
 
-initPageShell('cidr');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 

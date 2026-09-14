@@ -12,7 +12,7 @@ import { formatNumberGrouped } from '../../shared/format.ts';
 import { initPageShell } from '../../shared/shell.ts';
 import { diffLines, diffStats, formatUnified, type DiffRow } from '../../logic/diff.ts';
 
-initPageShell('diff');
+initPageShell();
 
 const DEBOUNCE_MS = 300;
 

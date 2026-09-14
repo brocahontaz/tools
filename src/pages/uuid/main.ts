@@ -4,7 +4,7 @@ import { formatBytes, formatNumberGrouped } from '../../shared/format.ts';
 import { initPageShell } from '../../shared/shell.ts';
 import { generateUuidV4, UUID_LIMIT, uppercase, uuidStats } from '../../logic/uuid.ts';
 
-initPageShell('uuid');
+initPageShell();
 
 const els = {
   count: byId<HTMLInputElement>('uuid-count'),

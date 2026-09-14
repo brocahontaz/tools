@@ -12,7 +12,7 @@ import { LIMITS, guardInput } from '../../shared/limits.ts';
 import { initPageShell } from '../../shared/shell.ts';
 import { decodeBase64, encodeBase64, type Base64Variant } from '../../logic/base64.ts';
 
-initPageShell('base64');
+initPageShell();
 
 const els = {
   input: byId<HTMLTextAreaElement>('base64-input'),
