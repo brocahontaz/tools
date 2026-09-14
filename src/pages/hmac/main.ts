@@ -16,7 +16,7 @@ import {
   type HmacEncoding,
 } from '../../logic/hmac.ts';
 
-initPageShell('hmac');
+initPageShell();
 
 const DEBOUNCE_MS = 300;
 

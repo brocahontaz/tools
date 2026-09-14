@@ -16,7 +16,7 @@ import {
   type HashEncoding,
 } from '../../logic/hash.ts';
 
-initPageShell('hash');
+initPageShell();
 
 const DEBOUNCE_MS = 300;
 

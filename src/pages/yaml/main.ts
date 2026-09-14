@@ -4,7 +4,7 @@ import { initPageShell } from '../../shared/shell.ts';
 import { convert, YAML_LIMIT, type ConvertDirection } from '../../logic/yaml.ts';
 import { guardInput } from '../../shared/limits.ts';
 
-initPageShell('yaml');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 

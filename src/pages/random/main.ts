@@ -10,7 +10,7 @@ import {
   type RandomOptions,
 } from '../../logic/random.ts';
 
-initPageShell('random');
+initPageShell();
 
 const els = {
   length: byId<HTMLInputElement>('rand-length'),

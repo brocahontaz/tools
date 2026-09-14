@@ -93,45 +93,6 @@ body {
   color: var(--warning);
 }
 
-/* Tools nav */
-
-.tools-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6px 16px 4px;
-}
-
-.tools-nav-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-dim);
-  font-family: var(--mono);
-  font-size: 12px;
-  text-decoration: none;
-  transition:
-    border-color 120ms ease,
-    color 120ms ease,
-    background 120ms ease;
-}
-
-.tools-nav-link:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-.tools-nav-link.active {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
 /* Layout */
 
 .layout {

@@ -10,7 +10,7 @@ import {
   type JwtTimestampRow,
 } from '../../logic/jwt.ts';
 
-initPageShell('jwt');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 

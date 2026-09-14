@@ -12,7 +12,7 @@ import {
 } from '../../logic/json.ts';
 import { LIMITS, guardInput } from '../../shared/limits.ts';
 
-initPageShell('json');
+initPageShell();
 
 const DEBOUNCE_MS = 250;
 
